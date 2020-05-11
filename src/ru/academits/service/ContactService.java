@@ -68,4 +68,8 @@ public class ContactService {
     public void deleteContact(int[] idArray) {
         contactDao.delete(idArray);
     }
+
+    public List<Contact> getFilteredContacts(String term) {
+        return contactDao.getFilteredContacts(term);
+    }
 }

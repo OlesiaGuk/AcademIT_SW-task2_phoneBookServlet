@@ -48,4 +48,16 @@ public class ContactDao {
             }
         }
     }
+
+    public List<Contact> getFilteredContacts(String term) {//todo: term.toUpperCase в сервлете
+        List<Contact> filteredList = new ArrayList<>();
+        for (Contact c : contactList) {
+            if (c.getFirstName().toUpperCase().contains(term) || c.getLastName().toUpperCase().contains(term) ||
+                    c.getPhone().toUpperCase().contains(term)) {
+                filteredList.add(c);
+            }
+        }
+        return filteredList;
+    }
 }
+

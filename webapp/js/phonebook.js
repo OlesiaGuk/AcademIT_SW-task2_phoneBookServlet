@@ -15,7 +15,8 @@ new Vue({
         lastName: "",
         phone: "",
         rows: [],
-        serverError: ""
+        serverError: "",
+        searchText: ""
     },
     methods: {
         contactToString: function (contact) {
@@ -135,8 +136,18 @@ new Vue({
                         text: "Отмена"
                     }
                 }
-
             })
+        },
+        filterContactList: function () {
+            var self = this;
+            $.get("phonebook/get/filtered?term=" + self.searchText).done(function (response) {
+                var filteredContactListFromServer = JSON.parse(response);
+                self.rows = self.convertContactList(filteredContactListFromServer);
+            })
+        },
+        clearFilter: function () {
+            this.searchText = "";
+            this.loadData();
         }
     },
     computed: {
