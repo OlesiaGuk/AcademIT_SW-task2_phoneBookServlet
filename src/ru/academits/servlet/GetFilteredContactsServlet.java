@@ -24,11 +24,6 @@ public class GetFilteredContactsServlet extends HttpServlet {
             resp.getOutputStream().write(filteredContactListJson.getBytes(Charset.forName("UTF-8")));
             resp.getOutputStream().flush();
             resp.getOutputStream().close();
-  /*          List<Contact> contactList = phoneBookService.getAllContacts();
-            String contactListJson = contactConverter.convertToJson(contactList);
-            resp.getOutputStream().write(contactListJson.getBytes(Charset.forName("UTF-8")));
-            resp.getOutputStream().flush();
-            resp.getOutputStream().close();*/
         } catch (Exception e) {
             System.out.println("error in GetFilteredContactsServlet GET: ");
             e.printStackTrace();

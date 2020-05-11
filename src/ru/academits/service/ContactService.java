@@ -61,10 +61,6 @@ public class ContactService {
         return contactDao.getAllContacts();
     }
 
-    /*public void deleteContact(int contactId) {
-        contactDao.delete(contactId);
-    }*/
-
     public void deleteContact(int[] idArray) {
         contactDao.delete(idArray);
     }

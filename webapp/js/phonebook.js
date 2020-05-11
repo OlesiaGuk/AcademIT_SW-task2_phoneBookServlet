@@ -89,12 +89,7 @@ new Vue({
                         btnClass: "btn-primary",
                         keys: ["enter"],
                         action: function () {
-                            $.post("/phonebook/deleteContact", JSON.stringify([c.id])).done(function (response) {
-                                /*  $.post("/phonebook/deleteContact", JSON.stringify(c)).done(function (response) {*/
-                                /*  if (!response.success) {
-                                      $.alert(response.message, {okText: "ОК"});
-                                      return;
-                                  }*/
+                            $.post("/phonebook/deleteContact", JSON.stringify([c.id])).done(function () {
                                 self.loadData();
                             }).fail(function () {
                                 $.alert("Ошибка на сервере");

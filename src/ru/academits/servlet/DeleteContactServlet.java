@@ -21,7 +21,6 @@ public class DeleteContactServlet extends HttpServlet {
             int[] idArray = idConverter.convertFromJson(idJson);
 
             phoneBookService.deleteContact(idArray);
-//todo:response!
         } catch (Exception e) {
             System.out.println("error in DeleteContactServlet POST: ");
             e.printStackTrace();

@@ -35,10 +35,6 @@ public class ContactDao {
         contactList.add(contact);
     }
 
-   /* public void delete(int contactId) {
-        contactList.removeIf(contact -> contact.getId() == contactId);
-    }*/
-
     public void delete(int[] idArray) {
         for (int i = 0; i < contactList.size(); i++) {
             for (int j : idArray) {
@@ -49,7 +45,7 @@ public class ContactDao {
         }
     }
 
-    public List<Contact> getFilteredContacts(String term) {//todo: term.toUpperCase в сервлете
+    public List<Contact> getFilteredContacts(String term) {
         List<Contact> filteredList = new ArrayList<>();
         for (Contact c : contactList) {
             if (c.getFirstName().toUpperCase().contains(term) || c.getLastName().toUpperCase().contains(term) ||
